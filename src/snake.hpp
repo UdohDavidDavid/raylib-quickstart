@@ -74,6 +74,11 @@ private:
         for (int i = 1; i < Bodies.size(); ++i) {
             current_body_rect = {(float)Bodies[i].posX, (float)Bodies[i].posY, (float)Constants.cell_width, (float)Constants.cell_height};
             if (CheckCollisionRecs(head_rect, current_body_rect)) collided = true;
+            if (CheckCollisionRecs(
+                    {(float)Bodies[0].posX, (float)Bodies[0].posY,
+                    (float)Constants.cell_width, (float)Constants.cell_height},
+                    current_body_rect))
+                collided = true;
         }
     }
 
@@ -81,18 +86,22 @@ private:
         if (body.posX > Constants.WINDOW_WIDTH - Constants.cell_width && direction == Direction::RIGHT) {
             Bodies[0].posX = 0;
             body.posX = 0;
+            process_collision();
         }
         if (body.posX < 0 && direction == Direction::LEFT) {
             Bodies[0].posX = Constants.WINDOW_WIDTH - Constants.cell_width;
             body.posX = Constants.WINDOW_WIDTH - Constants.cell_width;
+            process_collision();
         }
         if (body.posY < 0 && direction == Direction::UP) {
             Bodies[0].posY = Constants.WINDOW_HEIGHT - Constants.cell_height;
             body.posY = Constants.WINDOW_HEIGHT - Constants.cell_height;
+            process_collision();
         }
         if (body.posY > Constants.WINDOW_HEIGHT - Constants.cell_width && direction == Direction::DOWN) {
             Bodies[0].posY = 0;
             body.posY = 0;
+            process_collision();
         }
     }
 
