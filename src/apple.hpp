@@ -24,7 +24,9 @@ public:
     }
 
     void draw() {
-        DrawRectangleRec({(float)x, (float)y, (float)Constants.cell_width, (float)Constants.cell_height}, GREEN);
+        DrawRectangleRec({(float)x, (float)y, (float)Constants.cell_width,
+                        (float)Constants.cell_height},
+                       GREEN);
     }
 };
 
