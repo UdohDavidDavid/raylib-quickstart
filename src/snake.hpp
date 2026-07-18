@@ -52,6 +52,15 @@ public:
         process_borders();
     }
 
+    void draw() {
+        for (int i = 0; i < Bodies.size(); ++i) {
+            DrawRectangleRec({Bodies[i].posX, Bodies[i].posY,
+                          (float)Constants.cell_width,
+                          (float)Constants.cell_height},
+                         RED);
+        }
+    }
+
 private:
     void process_collision() {
         for (int i = 1; i < Bodies.size(); ++i) {

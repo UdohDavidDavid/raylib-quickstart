@@ -15,6 +15,8 @@ public:
     int cell_height = WINDOW_HEIGHT / ROW_NUM;
     int cell_width  = WINDOW_WIDTH / COL_NUM;
 
+    const char* title = "Snake Game";
+
 };
 
 inline Constants Constants;

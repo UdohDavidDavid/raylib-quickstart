@@ -22,6 +22,10 @@ public:
         apple_rect.x = x;
         apple_rect.y = y;
     }
+
+    void draw() {
+        DrawRectangleRec({(float)x, (float)y, (float)Constants.cell_width, (float)Constants.cell_height}, GREEN);
+    }
 };
 
 #endif
