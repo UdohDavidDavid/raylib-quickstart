@@ -35,7 +35,6 @@ public:
     }
 
     void run() {
-
         // game loop
         while (!WindowShouldClose()) {
             SetTargetFPS(snake.speed);
@@ -46,7 +45,12 @@ public:
             process_keyboard();
             draw_grid();
             snake.draw();
-            if (!snake.collided) snake.update(GetFrameTime());
+            if (!snake.collided) {
+                snake.update(GetFrameTime());
+            }
+            else {
+                print_game_over("Game Over", 67);
+            }
             apple.draw();
             check_apple();
 
@@ -90,6 +94,13 @@ private:
         else {
             snake.grow = false;
         }
+    }
+
+    void print_game_over(const char* text, int fontsize) {
+        int txtlen = MeasureText(text, fontsize);
+        DrawText(text, Constants.WINDOW_WIDTH / 2 - txtlen / 2,
+                 Constants.WINDOW_HEIGHT / 2 - GetFontDefault().baseSize,
+                 fontsize, WHITE);
     }
 };
 
