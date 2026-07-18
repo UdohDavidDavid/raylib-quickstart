@@ -45,6 +45,7 @@ public:
             process_keyboard();
             draw_grid();
             snake.draw();
+            snake.show_apple_count();
             if (!snake.collided) {
                 snake.update(GetFrameTime());
             }

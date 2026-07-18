@@ -4,6 +4,7 @@
 #include "constants.hpp"
 #include <vector>
 #include "raylib.h"
+#include <string>
 
 struct Body {
     float posX = (float)Constants.ROW_NUM / 2 * Constants.cell_width;
@@ -59,6 +60,13 @@ public:
                           (float)Constants.cell_height},
                          RED);
         }
+    }
+
+    void show_apple_count() {
+        // std::string text = "Score" + std::to_string(apple);
+        std::string i("Score: ");
+        i.append(std::to_string(apples));
+        DrawText(i.c_str(), 0, 0, 5, WHITE);
     }
 
 private:
