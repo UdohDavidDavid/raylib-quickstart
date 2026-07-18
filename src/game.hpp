@@ -43,7 +43,7 @@ public:
             ClearBackground(BLACK);
 
             process_keyboard();
-            draw_grid();
+            if (drawGrid) draw_grid();
             snake.draw();
             snake.show_apple_count();
             if (!snake.collided) {
