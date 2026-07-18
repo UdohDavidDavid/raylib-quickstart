@@ -49,11 +49,11 @@ int main ()
 
         if (IsKeyDown(KEY_D) && snake.direction != Direction::LEFT)
             snake.direction = Direction::RIGHT;
-        if (IsKeyDown(KEY_A) && snake.direction != Direction::RIGHT)
+        else if (IsKeyDown(KEY_A) && snake.direction != Direction::RIGHT)
             snake.direction = Direction::LEFT;
-        if (IsKeyDown(KEY_W) && snake.direction != Direction::DOWN)
+        else if (IsKeyDown(KEY_W) && snake.direction != Direction::DOWN)
             snake.direction = Direction::UP;
-        if (IsKeyDown(KEY_S) && snake.direction != Direction::UP)
+        else if (IsKeyDown(KEY_S) && snake.direction != Direction::UP)
             snake.direction = Direction::DOWN;
 
         for (int i = 1; i < Constants.ROW_NUM; ++i) {

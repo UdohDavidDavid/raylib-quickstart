@@ -25,7 +25,7 @@ public:
 
     int speed_check = 0;
 
-    int size = 8;
+    int size = 4;
 
     int speed = 6;
     Body body;
