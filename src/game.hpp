@@ -83,8 +83,12 @@ private:
 
     void check_apple() {
         for (int i = 1; i < snake.Bodies.size(); ++i) {
-            Rectangle snake_body_rect = {(float)snake.Bodies[i].posX, (float)snake.Bodies[i].posY, (float)Constants.cell_width, (float)Constants.cell_height};
-            if (CheckCollisionRecs(apple.apple_rect, snake_body_rect)) apple.respawn();
+            Rectangle snake_body_rect = {
+                (float)snake.Bodies[i].posX, (float)snake.Bodies[i].posY,
+                (float)Constants.cell_width, (float)Constants.cell_height};
+
+            if (CheckCollisionRecs(apple.apple_rect, snake_body_rect))
+                apple.respawn();
         }
         if (CheckCollisionRecs(snake.head_rect, apple.apple_rect)) {
             apple.respawn();
