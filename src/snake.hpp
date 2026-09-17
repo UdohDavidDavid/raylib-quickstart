@@ -113,7 +113,6 @@ private:
     }
 
     void process_direction() {
-
         if (!grow) Bodies.pop_back();
 
         if (direction == Direction::RIGHT) {
